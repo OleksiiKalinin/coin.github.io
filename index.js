@@ -3,21 +3,23 @@ document.addEventListener('DOMContentLoaded', () => {
           coin = document.querySelector('.coin'),
           points = document.querySelector('.coin__front span');
 
-    let randNum = Math.floor(Math.random() * (200 - 150 +1) + 150);
+    let randNum = Math.floor(Math.random() * (200 - 150 + 1) + 150);
 
     points.textContent = randNum;
     
     button.addEventListener('click', () => {
         coin.classList.toggle('coin__active');
+        console.log('start');
         points.textContent = '';
         button.disabled = true;
         setTimeout(() => {
             randNum -= (Math.floor(Math.random() * 10) + 1);
             points.textContent = randNum;
-        }, 400);
+        }, 1000);
         setTimeout(() => {
             coin.classList.toggle('coin__active');
             button.disabled = false;
-        }, 950);
+            console.log('stop');
+        }, 1900);
     });
 });

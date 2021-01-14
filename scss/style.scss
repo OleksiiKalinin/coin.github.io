@@ -7,7 +7,7 @@ $coin-back: "../coin.svg";
 
 $edge-pieces: 80;
 $edge-piece-length: 3.14 * $coin-diameter / $edge-pieces;
-$turn-time: 1s;
+$turn-time: 3s;
 
 .coin {
     position: relative;
@@ -49,7 +49,7 @@ $turn-time: 1s;
 .coin__back {
     background-image: url($coin-back);
     background-size: cover;
-    transform: translateZ(-$coin-thickness/2) rotateY(180deg);
+    transform: translateZ(-$coin-thickness/2) rotateY(180deg) scale(1, -1);
 }
 
 .coin__edge {
